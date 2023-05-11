@@ -1,10 +1,10 @@
-const { ethers } = require("ethers");
+const { ethers } = require("hardhat");
 
 async function main() {
-  const tombola = await ethers.getContractFactory("tombola");
+  const tombola = await ethers.getContractFactory("Tombola");
 
   // Start deployment, returning a promise that resolves to a contract object
-  const tombolaMessage = await tombola.deploy("contract deployed!");
+  const tombolaMessage = await tombola.deploy("tombola", "1683797575");
   console.log("Contract deployed to address:", tombolaMessage.address);
 }
 
